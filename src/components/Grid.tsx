@@ -25,11 +25,23 @@ const Grid = () => {
 
   const cellSize =
     (Math.min(window.innerWidth, window.innerHeight) /
-      Math.min(gameState.gridWidth, gameState.gridHeight)) *
+      ((Math.min(gameState.gridWidth, gameState.gridHeight) * 9 +
+        Math.max(gameState.gridWidth, gameState.gridHeight)) /
+        10)) *
     0.9;
 
+  let textSize = 'text-3xl';
+
+  if (cellSize < 30) {
+    textSize = 'text-1xl';
+  } else if (cellSize < 40) {
+    textSize = 'text-2xl';
+  } else if (cellSize >= 40) {
+    textSize = 'text-3xl';
+  }
+
   const cellClasses = (isAlive: boolean, cellX: number, cellY: number) => {
-    const classes = ['text-3xl text-center flex items-center justify-center'];
+    const classes = ['flex items-center justify-center', textSize];
 
     if (selectedArea && mouseLocation) {
       const fromX = Math.min(selectedArea?.x || 0, mouseLocation?.x || 0);
@@ -75,7 +87,7 @@ const Grid = () => {
       }}
     >
       <div
-        className="w-fit h-fit grid my-8 bg-primary border-8 border-primary"
+        className="w-fit h-fit grid m-12 bg-primary border-8 border-primary"
         style={{
           gridTemplateColumns: `repeat(${gameState.gridWidth}, 1fr)`,
           gridTemplateRows: `repeat(${gameState.gridHeight}, 1fr)`,
