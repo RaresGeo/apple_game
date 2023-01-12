@@ -3,6 +3,8 @@ export interface GameState {
   gridWidth: number;
   gridHeight: number;
   cells: Cell[][];
+  score: number;
+  highScore: number;
 }
 
 interface Cell {

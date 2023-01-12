@@ -32,6 +32,8 @@ const Navbar = () => {
       setGameState((prev) => ({
         ...prev,
         cells: getNewGrid(prev.gridWidth, prev.gridHeight),
+        score: 0,
+        highScore: Math.max(prev.score, prev.highScore),
       }));
     }
   };
@@ -51,6 +53,14 @@ const Navbar = () => {
             Start
           </div>
         )}
+        <div className="flex space-x-8">
+          <div className={buttonClasses(false)}>
+            Score: {gameState?.score || 0}
+          </div>
+          <div className={buttonClasses(false)}>
+            High score: {gameState?.highScore || 0}
+          </div>
+        </div>
         <div
           className={buttonClasses(!!gameState)}
           onClick={() => setShowSizeInput(!!gameState)}

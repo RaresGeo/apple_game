@@ -163,9 +163,13 @@ const Grid = () => {
                       });
                     });
 
+                    // score is the number of cells that were removed
+                    const newScore = (toX - fromX + 1) * (toY - fromY + 1);
+
                     setGameState((prev) => ({
                       ...prev,
                       cells: newCells,
+                      score: prev.score + newScore,
                     }));
 
                     setSelectedArea(null);

@@ -6,6 +6,8 @@ const initialGameState: GameState = {
   gridWidth: 15,
   gridHeight: 15,
   cells: [[]],
+  score: 0,
+  highScore: 0,
 };
 
 interface GameContextI {
