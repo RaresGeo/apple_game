@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { getNewGrid, useGame } from '../GameContext';
 import Modal from './Modal';
 

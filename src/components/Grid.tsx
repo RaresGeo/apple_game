@@ -93,9 +93,6 @@ const Grid = () => {
           gridTemplateRows: `repeat(${gameState.gridHeight}, 1fr)`,
           gap: '5px',
         }}
-        onMouseLeave={() => {
-          setMouseLocation(null);
-        }}
       >
         {gameState.cells.map((row, rowIndex) => {
           return row.map(({ isAlive, value }, cellIndex) => {
