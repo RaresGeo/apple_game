@@ -7,7 +7,43 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.content {
+  overflow: hidden;
+  margin-top: 4rem;
+  width: 100vw;
+  height: calc(100vh - 4rem);
+}
+
+/* Style the scrollbar */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #001D3D
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000814
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
